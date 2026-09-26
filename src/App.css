@@ -1,0 +1,292 @@
+.pokedex_card {
+    box-sizing: border-box;
+    background-color: #002147;
+    padding: 20px;
+    font-weight: 500;
+    font-family: "Press Start 2P", system-ui;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+/* Header */
+.poke_header {
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    margin: -20px -20px 20px -20px;
+}
+
+.poke_logo {
+    height: 40px;
+    width: auto;
+}
+
+.poke_search_group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.poke_input {
+    width: 300px;
+    max-width: 500px;
+    box-sizing: border-box;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    padding: 11px;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.poke_button {
+    background-color: #00b7eb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    padding: 11px 20px;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Main layout */
+.poke_all {
+    display: flex;
+    gap: 20px;
+    height: 400px;
+}
+
+/* Pokemon list grid */
+.poke_list {
+    border: none;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    flex: 2;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    justify-content: start;
+    align-content: start;
+    gap: 16px;
+    color: #002147;
+}
+
+.poke_list_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: start;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 11px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.poke_list_item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.poke_list_sprite {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+/* Gen sidebar */
+.poke_gen_sidebar {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 120px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.poke_gen_button {
+    background-color: white;
+    color: #002147;
+    border: none;
+    border-radius: 5px;
+    padding: 11.5px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.poke_gen_button:hover {
+    background-color: #e0e0e0;
+}
+
+.poke_gen_button.active {
+    background-color: #00b7eb;
+    color: white;
+}
+
+/* Detail panel */
+.poke_detail {
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px 10px 20px 10px;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.poke_detail_img {
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.poke_detail_img img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.poke_detail_info {
+    text-align: left;
+    width: 100%;
+    margin-top: 5px;
+    color: #002147;
+    font-size: 13px;
+}
+
+.poke_types {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.poke_type_badge {
+    color: white;
+    padding: 2px 8px;
+    border-radius: 25px;
+    font-size: 8px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+/* Footer */
+.poke_footer {
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    padding: 20px;
+    font-size: 13px;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+
+.poke_footer a {
+    text-decoration: none;
+    color: #0070b8;
+}
+
+/* Global font override for form elements */
+body, button, input, textarea, select {
+    font-family: "Press Start 2P", system-ui;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .poke_all {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .poke_logo {
+    height: 30px;
+  }
+
+  .poke_input {
+    width: 100%;
+    max-width: none;
+    font-size: 9px;
+  }
+
+  .poke_button {
+    width: 100%;
+    font-size: 7px;
+    font-weight: 600;
+  }
+
+  .poke_all {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .poke_gen_sidebar {
+    order: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+
+  .poke_gen_button {
+    width: auto;
+  }
+
+  .poke_list {
+    order: 3;
+    grid-template-columns: repeat(2, 1fr);
+    height: 300px;
+  }
+
+  .poke_detail {
+    order: 1;
+    height: auto;
+  }
+
+  .poke_footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
