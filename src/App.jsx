@@ -48,11 +48,11 @@ function App() {
   const [selectedGen, setSelectedGen] = useState(1)
   const [typeCache, setTypeCache] = useState({})
 
-  const url = `http://pokeapi.co/api/v2/pokemon/${pokemon}`
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
 
   // Fetch full Pokémon list once on mount
   useEffect(() => {
-    axios.get('http://pokeapi.co/api/v2/pokemon?limit=1302&offset=0')
+    axios.get('https://pokeapi.co/api/v2/pokemon?limit=1302&offset=0')
       .then((response) => {
         setPokeList(response.data.results)
       })
@@ -70,7 +70,7 @@ function App() {
   }
 
   function handlePokeClick(name) {
-    axios.get(`http://pokeapi.co/api/v2/pokemon/${name}`).then((response) => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`).then((response) => {
       setValue(response.data)
     })
     setPokemon('')
